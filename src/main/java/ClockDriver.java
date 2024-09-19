@@ -1,3 +1,4 @@
+package src.main.java;
 
 public class ClockDriver
 {
@@ -14,7 +15,18 @@ public class ClockDriver
         //  * Tick test for 01:59 to 02:00
         //  * Tick test for 09:59 to 10:00
         //  * Tick test for 23:59 to 00:00
+        ClockDisplay test1 = new ClockDisplay();
+        String test1Output = test1.getTime();
+        System.out.println("Empty constructor test - " + test1Output);
         
+        ClockDisplay test2 = new ClockDisplay(3, 45);
+        String test2Output = test2.getTime();
+        System.out.println("2 arg. constructor test - " + test2Output);
+        
+        ClockDisplay tickTest1 = new ClockDisplay(3, 32);
+        System.out.println("Tick Test 1 PreTick - " + tickTest1.getTime());
+        tickTest1.timeTick();
+        System.out.println("Tick Test 1 PostTick - " + tickTest1.getTime());
         
         //Implement tests for your ClockDisplaySeconds
         //  * Test that you can do the basics
@@ -27,6 +39,19 @@ public class ClockDriver
         //  * Tick test for 01:00:59 to 01:01:00
         //  * Tick test for 01:59:59 to 02:00:00
         //  * Tick test for 23:59:59 to 00:00:00
+        ClockDisplaySeconds secondTest1 = new ClockDisplaySeconds();
+        String secondTest1Output = secondTest1.getTime();
+        System.out.println("Empty constructor test - " + secondTest1Output);
+        
+        ClockDisplaySeconds secondTest2 = new ClockDisplaySeconds();
+        String secondTest2Output = secondTest2.getTime();
+        System.out.println("2 arg. constructor test - " + secondTest2Output);
+        
+        ClockDisplaySeconds tickTest2 = new ClockDisplaySeconds(22, 43, 59);
+        System.out.println("Tick Test 2 PreTick - " + tickTest2.getTime());
+        tickTest2.timeTick();
+        System.out.println("Tick Test 2 PostTick - " + tickTest2.getTime());
+        
         
         /*CHALLENGE*/
         //Implement tests for your ClockDisplay12Hour
